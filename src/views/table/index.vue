@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <el-table
-        v-loading="listLoading"
+        :v-loading="listLoading"
         :data="list"
         element-loading-text="Loading"
         :max-height="tableHeight"
@@ -98,7 +98,7 @@ export default {
   },
   data() {
     return {
-      list: null,
+      list: [],
       listLoading: true,
       tableHeight: window.innerHeight - 150
     }

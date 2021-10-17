@@ -16,8 +16,8 @@ import router from './router'
 import '@/icons' // 图标
 import '@/permission' // 动态路由权限控制
 
-
 Vue.use(ElementUI)
+
 
 Vue.config.productionTip = false
 
