@@ -1,6 +1,7 @@
 import {constantRoutes} from '@/router'
 import {listRoutes} from "@/api/user";
 import Layout from '@/layout'
+import Link from '@/layout/components/Sidebar/Link'
 
 /**
  * Filter asynchronous routing tables by recursion
@@ -14,6 +15,8 @@ export function filterAsyncRoutes(routes) {
         const tmp = {...route}
         if (tmp.component === 'Layout') {
             tmp.component = Layout
+        } else if (tmp.component === 'Link') {
+            tmp.component = Link
         } else {
             tmp.component = loadView(tmp.component)
         }
