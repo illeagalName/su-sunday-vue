@@ -21,7 +21,6 @@ export default {
   },
   methods: {
     initChart() {
-      console.log(this)
       const char = echarts.init(document.getElementById("main"));
 
       // let option = {
@@ -44,7 +43,6 @@ export default {
 
       todayElectricity().then(response => {
         this.list = response.data
-        console.log(this.list)
         const categoryList = this.list.map(item => {
           return item.subscript
         })

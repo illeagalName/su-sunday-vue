@@ -5,7 +5,6 @@ export default {
   },
   render() {
     const {$route: {path},} = this;
-    console.log(path)
     if (path === "") {
       return "404";
     }

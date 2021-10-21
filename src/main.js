@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import '@/styles/index.scss' // 全局css
+import '@/utils/storage'
 
 import App from './App'
 // 引入vuex

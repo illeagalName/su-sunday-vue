@@ -14,7 +14,6 @@ Storage.prototype.getExpire = key => {
         return val;
     }
     val = JSON.parse(val);
-    console.log(Date.now(), val.expire);
     if (Date.now() > val.expire) {
         localStorage.removeItem(key);
         return null;

@@ -1,6 +1,6 @@
 import {login, logout, getInfo} from '@/api/user'
-import {getToken, setToken, removeToken} from '@/utils/auth'
 import {resetRouter} from '@/router'
+import jwt_decode from "jwt-decode"
 
 const TYPES = {
     RESET_STATE: 'RESET_STATE',// 重置state
@@ -13,7 +13,7 @@ const TYPES = {
 
 const getDefaultState = () => {
     return {
-        token: getToken(),
+        token: localStorage.getExpire("token"),
         userName: '',
         nickName: '',
         avatar: '',
@@ -52,7 +52,10 @@ const actions = {
             login({username: username.trim(), password: password}).then(response => {
                 const {data} = response
                 commit(TYPES.SET_TOKEN, data.token)
-                setToken(data.token)
+                // 解析token
+                const {exp} = jwt_decode(data.token)
+                localStorage.setExpire("token", data.token, exp * 1000)
+                // setToken(data.token)
                 resolve()
             }).catch(error => {
                 reject(error)
@@ -93,7 +96,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             logout(state.token).then(() => {
                 // 先移除token
-                removeToken()
+                localStorage.removeItem("token")
                 resetRouter()
                 commit(TYPES.RESET_STATE)
                 resolve()
@@ -106,7 +109,7 @@ const actions = {
     resetToken({commit}) {
         return new Promise(resolve => {
             // 先移除token
-            removeToken()
+            localStorage.removeItem("token")
             commit(TYPES.RESET_STATE)
             resolve()
         })

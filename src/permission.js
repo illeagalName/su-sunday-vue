@@ -6,8 +6,6 @@ import {Message} from 'element-ui'
 import NProgress from 'nprogress'
 //  进度条 bar style
 import 'nprogress/nprogress.css'
-// 获取token
-import {getToken} from '@/utils/auth'
 import getPageTitle from '@/utils/get-page-title'
 
 // NProgress 配置
@@ -22,7 +20,8 @@ router.beforeEach(async (to, from, next) => {
     // 设置浏览器导航上的名字
     document.title = getPageTitle(to.meta.title)
 
-    const hasToken = getToken()
+    // const hasToken = getToken()
+    const hasToken = localStorage.getExpire("token")
 
     if (hasToken) {
         if (to.path === '/login') {

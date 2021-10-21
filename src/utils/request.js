@@ -1,7 +1,6 @@
 import axios from 'axios'
 import {MessageBox, Message} from 'element-ui'
 import store from '@/store'
-import {getToken} from '@/utils/auth'
 
 // 创建axios实例
 const service = axios.create({
@@ -15,7 +14,7 @@ service.interceptors.request.use(config => {
         //发送请求前可以操作一些东西
 
         if (store.getters.token) {
-            config.headers.Authorization = 'Bearer ' + getToken()
+            config.headers.Authorization = 'Bearer ' + localStorage.getExpire("token")
         }
         config.headers['client_id'] = "web"
         return config
