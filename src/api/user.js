@@ -28,10 +28,3 @@ export function logout() {
     method: 'delete'
   })
 }
-
-export function todayElectricity() {
-  return request({
-    url: '/user/user/electricity',
-    method: 'get'
-  })
-}

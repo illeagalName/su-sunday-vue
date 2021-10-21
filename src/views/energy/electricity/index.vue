@@ -6,7 +6,7 @@
 
 <script>
 
-import {todayElectricity} from '@/api/user'
+import {todayElectricity} from '@/api/echart'
 import * as echarts from 'echarts';
 
 export default {
