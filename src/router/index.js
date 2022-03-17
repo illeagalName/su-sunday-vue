@@ -79,42 +79,42 @@ export const constantRoutes = [
             component: () => import('@/views/dashboard/index'),
             meta: {title: '仪表盘', icon: 'dashboard'}
         }]
-    },
-
-    {
-        path: '/example',
-        component: Layout,
-        redirect: '/example/table',
-        name: 'Example',
-        meta: {title: '案例', icon: 'el-icon-s-help'},
-        children: [
-            {
-                path: 'table',
-                name: 'Table',
-                component: () => import('@/views/table/index'),
-                meta: {title: '表格', icon: 'table'}
-            },
-            {
-                path: 'tree',
-                name: 'Tree',
-                component: () => import('@/views/tree/index'),
-                meta: {title: '树形', icon: 'tree'}
-            }
-        ]
-    },
-
-    {
-        path: '/form',
-        component: Layout,
-        children: [
-            {
-                path: 'index',
-                name: 'Form',
-                component: () => import('@/views/form/index'),
-                meta: {title: '表单', icon: 'form'}
-            }
-        ]
     }
+    // ,
+    // {
+    //     path: '/example',
+    //     component: Layout,
+    //     redirect: '/example/table',
+    //     name: 'Example',
+    //     meta: {title: '案例', icon: 'el-icon-s-help'},
+    //     children: [
+    //         {
+    //             path: 'table',
+    //             name: 'Table',
+    //             component: () => import('@/views/table/index'),
+    //             meta: {title: '表格', icon: 'table'}
+    //         },
+    //         {
+    //             path: 'tree',
+    //             name: 'Tree',
+    //             component: () => import('@/views/tree/index'),
+    //             meta: {title: '树形', icon: 'tree'}
+    //         }
+    //     ]
+    // },
+    //
+    // {
+    //     path: '/form',
+    //     component: Layout,
+    //     children: [
+    //         {
+    //             path: 'index',
+    //             name: 'Form',
+    //             component: () => import('@/views/form/index'),
+    //             meta: {title: '表单', icon: 'form'}
+    //         }
+    //     ]
+    // }
 ]
 
 

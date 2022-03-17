@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <div id="main" style="width: 1800px;height:800px;"></div>
+    <div id="main" style="width: 800px;height:300px;"></div>
   </div>
 </template>
 
